@@ -1,0 +1,7 @@
+# dataset.yaml
+path: C:\Users\Alexey\Desktop\Lesson 7\project_annotations
+train: obj_Train_data
+val: obj_Test_data
+test: obj_Test_data
+names:
+  0: object  # Здесь основное имя класса
