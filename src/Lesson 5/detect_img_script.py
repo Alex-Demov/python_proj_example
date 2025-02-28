@@ -2,18 +2,15 @@ import os
 import xml.etree.ElementTree as ET
 from PIL import Image
 
-# Папки с изображениями
-test_folder = r"C:\Users\Alexey\Desktop\Миленом системс\Лекция 5 (13.12.24)\Pictures_for_script\test_together"
-train_folder = r"C:\Users\Alexey\Desktop\Миленом системс\Лекция 5 (13.12.24)\Pictures_for_script\train_together"
-# Папки для сохранения вырезанных изображений
-output_test_folder = r"C:\Users\Alexey\Desktop\Миленом системс\Лекция 5 (13.12.24)\Pictures_for_script\test"
-output_train_folder = r"C:\Users\Alexey\Desktop\Миленом системс\Лекция 5 (13.12.24)\Pictures_for_script\train"
+# Запрос адресов папок и XML-файла у пользователя
+test_folder = input("Ввести путь к папке с тестовыми изображениями: ")
+train_folder = input("Ввести путь к папке с обучающими изображениями: ")
+output_test_folder = input("Ввести путь к папке для сохранения вырезанных тестовых изображений: ")
+output_train_folder = input("Ввести путь к папке для сохранения вырезанных обучающих изображений: ")
+annotations_file = input("Ввести путь к XML-файлу с аннотациями: ")
 
 os.makedirs(output_test_folder, exist_ok=True)
 os.makedirs(output_train_folder, exist_ok=True)
-
-# Путь к xml-файлу с аннотациями
-annotations_file = r"C:\Users\Alexey\Desktop\Миленом системс\Лекция 5 (13.12.24)\annotations.xml"
 
 # Парсинг XML
 tree = ET.parse(annotations_file)
